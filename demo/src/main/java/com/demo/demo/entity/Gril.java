@@ -8,7 +8,7 @@ import javax.persistence.Id;
 /**
  * @param
  * @author
- * @description
+ * @description 测试实体类
  * @date
  * @return
  */
