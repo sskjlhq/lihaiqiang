@@ -1,5 +1,6 @@
 package com.demo.demo.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date
  * @return
  */
+@Slf4j
 @Controller
 @RequestMapping("/")
 public class controller {
