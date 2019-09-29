@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * @param
@@ -13,7 +14,7 @@ import javax.persistence.Id;
  * @return
  */
 @Data
-public class Gril {
+public class Gril implements Serializable {
     @Id
     @GeneratedValue(generator = "system-uuid")
     private String id;
