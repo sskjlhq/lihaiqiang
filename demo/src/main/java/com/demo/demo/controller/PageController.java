@@ -18,14 +18,14 @@ import javax.jws.WebParam;
  */
 @Controller
 @Slf4j
-@RequestMapping("/")
 public class PageController {
     /**
      * 首页
      * @return
      */
-    @RequestMapping("/index")
-    public String index() {
+    @RequestMapping("/")
+    public String index(Model model) {
+        model.addAttribute("name", "huluqilai");
         return "index";
     }
 }
