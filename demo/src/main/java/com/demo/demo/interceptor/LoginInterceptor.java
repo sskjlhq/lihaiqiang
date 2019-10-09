@@ -4,6 +4,7 @@ package com.demo.demo.interceptor;/**
  * @date ${date} ${time}
  */
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,11 +16,15 @@ import javax.servlet.http.HttpServletResponse;
  * @description 登录拦截器
  * @date 2019/10/9 11:03
  */
+@Slf4j
 public class LoginInterceptor implements HandlerInterceptor {
     // 目标方法执行之前
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         Object user = httpServletRequest.getSession().getAttribute("loginUser");
+
+        log.info("================================进入当前登录拦截方法====================================");
+
         if (user == null) {
             // 未登录，返回登录页面
             httpServletRequest.setAttribute("msg", "没有权限，请先登录！");

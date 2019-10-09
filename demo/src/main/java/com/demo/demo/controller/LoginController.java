@@ -27,12 +27,12 @@ public class LoginController {
         if (!StringUtils.isEmpty(username) && "123456".equals(password)) {
             // 登录成功
             session.setAttribute("loginUser", username);
-            return "main";
+            return "redirect:/main.html";
         } else {
             // 登录失败
             map.put("msg", "登录失败！");
             mv.setViewName("redirect:/index.html");
-            return "index";
+            return "redirect:/index.html";
         }
     }
 }
