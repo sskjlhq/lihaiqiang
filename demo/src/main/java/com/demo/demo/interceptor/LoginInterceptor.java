@@ -28,10 +28,11 @@ public class LoginInterceptor implements HandlerInterceptor {
         if (user == null) {
             // 未登录，返回登录页面
             httpServletRequest.setAttribute("msg", "没有权限，请先登录！");
-            httpServletRequest.getRequestDispatcher("/index.html").forward(httpServletRequest, httpServletResponse);
+            httpServletRequest.getRequestDispatcher("/").forward(httpServletRequest, httpServletResponse);
             return false;
         } else {
             // 已登录，放行请求
+            httpServletRequest.getRequestDispatcher("/main.html").forward(httpServletRequest, httpServletResponse);
             return true;
         }
     }

@@ -23,16 +23,14 @@ public class LoginController {
 
     @PostMapping("/user/login")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, Map<String, Object> map, HttpSession session) {
-        ModelAndView mv = new ModelAndView();
         if (!StringUtils.isEmpty(username) && "123456".equals(password)) {
             // 登录成功
             session.setAttribute("loginUser", username);
-            return "redirect:/main.html";
+            return "main";
         } else {
             // 登录失败
             map.put("msg", "登录失败！");
-            mv.setViewName("redirect:/index.html");
-            return "redirect:/index.html";
+            return "index";
         }
     }
 }
