@@ -7,6 +7,7 @@ package com.demo.demo.config;/**
 import com.demo.demo.interceptor.LoginInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -19,14 +20,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
     @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-//        super.addViewControllers(registry);
-        registry.addViewController("/").setViewName("main");
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //配置静态资源处理
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/static/**", "classpath:/public/**",
+                        "classpath:/templates/**");
     }
 
+    // 注册拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-//        super.addInterceptors(registry);
         registry.addInterceptor(new LoginInterceptor())
                 // 拦截所有请求
                 .addPathPatterns("/**")

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Map;
 
 /**
@@ -26,6 +28,8 @@ public class LoginController {
         if (!StringUtils.isEmpty(username) && "123456".equals(password)) {
             // 登录成功
             session.setAttribute("loginUser", username);
+            ArrayList arrayList = new ArrayList();
+            LinkedList linkedList = new LinkedList();
             return "main";
         } else {
             // 登录失败
