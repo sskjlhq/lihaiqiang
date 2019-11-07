@@ -4,8 +4,7 @@ package com.demo.demo;/**
  * @date ${date} ${time}
  */
 
-import java.util.HashMap;
-import java.util.Hashtable;
+import java.util.List;
 
 /**
  * @author 李海强
@@ -15,10 +14,16 @@ import java.util.Hashtable;
 public class Test {
 
     public static void main(String[] args) {
-        long round = Math.round(-1.5);
-        System.out.println(round);
-        String a = "300";
-        System.out.println(Integer.valueOf(a));
+        Gril p1 = new Gril();
 
+        System.out.println(p1 instanceof List);//false
+        System.out.println(p1 instanceof List<?>);//false
+        System.out.println(p1 instanceof Object);//true
+        String1();
+    }
+
+    @DefineAnnotation
+    private static void String1() {
+        System.out.println("test~~~~");
     }
 }
