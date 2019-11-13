@@ -1,8 +1,4 @@
-package com.demo.demo;/**
- * @description
- * @author 李海强
- * @date ${date} ${time}
- */
+package com.demo.demo;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;

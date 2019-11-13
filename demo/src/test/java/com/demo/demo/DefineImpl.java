@@ -1,11 +1,8 @@
 package com.demo.demo;
 
-import java.lang.reflect.Method;
-import java.util.Date;
-
 /**
  * @author 李海强
- * @description 注解实现类，通过java反射机制来获取注解对象
+ * @description 使用注解
  * @date 2019/11/7 9:07
  */
 @DefineAnnotation(name = "我是类注解", value = {"26"})
