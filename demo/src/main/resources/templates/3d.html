@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg {
+            width: 320px;
+            height: 560px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -280px;
+            margin-left: -160px;
+            background: url("../static/plugins/layui/img/7.jpg") no-repeat;
+            perspective: 3000px;
+            /*视距：3000px*/
+            transform-style: preserve-3d;
+            /*3D效果*/
+        }
+
+        .list {
+            list-style: none;
+            width: 250px;
+            height: 250px;
+            position: relative;
+            margin: 100px auto;
+            animation: move 3s linear infinite;
+            transform-style: preserve-3d;
+        }
+
+        /*调试效果达到3D魔方*/
+        @keyframes move {
+            0% {
+                transform: translate(0px) scale(0.6) rotateY(0deg)
+            }
+            25% {
+                transform: translate(100px) scale(0.6) rotateX(90deg);
+            }
+            50% {
+                transform: translate(50px) scale(0.6) rotateZ(180deg)
+            }
+            75% {
+                transform: translate(100px) scale(0.6) rotateX(90deg);
+            }
+            100% {
+                transform: translate(0px) scale(0.6) rotateY(0deg)
+            }
+        }
+
+        .list li {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .list li img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .list li:nth-child(1) {
+            transform: translateZ(125px);
+        }
+
+        .list li:nth-child(2) {
+            transform: translateZ(-125px) rotateY(180deg);
+        }
+
+        .list li:nth-child(3) {
+            transform: translateX(-125px) rotateY(90deg);
+        }
+
+        .list li:nth-child(4) {
+            transform: translateX(125px) rotateY(-90deg);
+        }
+
+        .list li:nth-child(5) {
+            transform: translateY(125px) rotateX(-90deg);
+        }
+
+        .list li:nth-child(6) {
+            transform: translateY(-125px) rotateX(90deg);
+        }
+    </style>
+</head>
+<body>
+<div class="bg">
+    <ul class="list">
+        <li><img src="../static/plugins/layui/img/1.jpg" alt="1"></li>
+        <li><img src="../static/plugins/layui/img/2.jpg" alt="2"></li>
+        <li><img src="../static/plugins/layui/img/3.jpg" alt="3"></li>
+        <li><img src="../static/plugins/layui/img/4.png" alt="4"></li>
+        <li><img src="../static/plugins/layui/img/5.jpg" alt="5"></li>
+        <li><img src="../static/plugins/layui/img/6.jpg" alt="6"></li>
+    </ul>
+</div>
+</body>
+</html>
